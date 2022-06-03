@@ -13,15 +13,13 @@ var prefixCount = function(words, pref) {
         }
     }
     
+    // retrive same number of characters from word starting for index of 0
     for (let word of words) {
         if (word.substr(0, prefCount) === pref) {
+    // if they match increase count by one
             count++;
         }
     }
+    // return count
     return count;
 };
-
-// count number of charatcers in pref
-// retrive same number of characters from word starting for index of 0
-// if they match increase count by one
-// return count
