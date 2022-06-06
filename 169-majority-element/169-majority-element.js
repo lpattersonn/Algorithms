@@ -8,7 +8,7 @@ var majorityElement = function(nums) {
     
     // loop through nums
     for (let num of nums) {
-        // convert values as am object
+        // convert values as an object
         if(obj[num] === undefined) {
             obj[num] = 1
         } else {
