@@ -18,6 +18,6 @@ var containsDuplicate = function(nums) {
         if (obj[keys] > 1)
             result = true;
     }
-    console.log(obj, result)
+    
     return result;
 };
