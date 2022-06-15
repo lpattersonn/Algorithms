@@ -1,0 +1,29 @@
+/**
+ * @param {string} s
+ * @return {number}
+ */
+var firstUniqChar = function(s) {
+    let newObj = {};
+    let index = -1
+    for (let i = 0; i < s.length; i++) {
+        if (newObj[s[i]] === undefined) {
+            newObj[s[i]] = [1, [i]];
+        } else {
+            newObj[s[i]][0]++;
+            newObj[s[i]][1].push(i);
+        }
+    }
+    
+    for (let keys in newObj) {
+        if(newObj[keys][0] === 1) {
+           index = newObj[keys][1][0]
+           return index;
+        }
+    }
+    console.log(index);
+    return index;
+};
+
+// Loop through array
+// Create a new object
+// Push value as key[0] and index at key[1]
