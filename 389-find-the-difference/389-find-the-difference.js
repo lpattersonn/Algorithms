@@ -27,6 +27,5 @@ var findTheDifference = function(s, t) {
             result = key;
         }
     }
-    console.log(sObj, tObj);
     return result;
 };
