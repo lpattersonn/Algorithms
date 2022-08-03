@@ -18,13 +18,11 @@ var thirdMax = function(nums) {
     }
     for (let keys in obj) {
         array.push(Number(keys));
-        console.log(array)
     }
-    let secondArray = array.sort(function (a, b) {
+
+        array.sort(function (a, b) {
         return a - b;
     })
-    
-    console.log(secondArray);
     
     
         if (array.length < 3) {
