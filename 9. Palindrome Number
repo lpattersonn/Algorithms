@@ -1,0 +1,66 @@
+Given an integer x, return true if x is a 
+palindrome
+, and false otherwise.
+
+ 
+
+Example 1:
+
+Input: x = 121
+Output: true
+Explanation: 121 reads as 121 from left to right and from right to left.
+Example 2:
+
+Input: x = -121
+Output: false
+Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+Example 3:
+
+Input: x = 10
+Output: false
+Explanation: Reads 01 from right to left. Therefore it is not a palindrome.
+ 
+
+Constraints:
+
+-231 <= x <= 231 - 1
+
+# Answer: 
+
+/**
+ * @param {number} x
+ * @return {boolean}
+ */
+var isPalindrome = function(x) {
+    let result = true, stringX = x.toString(), index = 1;
+
+    // Return false if number is negative
+    if (x < 0) {
+        result = false;
+        return result;
+    }    
+    
+    // Check if the length of the array is less than 3
+     if (stringX.length < 3) { 
+        if (stringX[0] !== stringX[stringX.length - 1]) {
+            result = false;
+            return result;
+        } else {
+            return result;
+        }
+    } else {
+        // Loop through string
+        for (let i = 0; i <= stringX.length - 1; i++ ) {
+        // Check if x is a palindrome and check if forward and reverse i values are the same
+            if (stringX[i] === stringX[stringX.length - index]) {
+                index++;
+            } else {
+                result = false;
+                return result;
+            } 
+        }
+    }
+
+    return result; 
+};
+
