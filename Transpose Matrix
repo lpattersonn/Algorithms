@@ -1,0 +1,31 @@
+867. Transpose Matrix
+The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
+
+# Answer
+
+/**
+ * @param {number[][]} matrix
+ * @return {number[][]}
+ */
+var transpose = function(matrix) {
+    let result = [];
+    // Loop through array at i
+    for (let i = 0; i <= matrix.length; i++) {
+        if (matrix[i] !== undefined) {
+            // Loop through matrix[i]
+            for (let k = 0; k <= matrix[i].length; k++) {
+                // Create a new array or push value to the end if a value exists
+                if (result[k] == undefined) {
+                    if (matrix[i][k] !== undefined) {
+                        result[k] = [matrix[i][k]];              
+                    }
+                } else {
+                    if (matrix[i][k] !== undefined) {
+                        result[k].push(matrix[i][k]);
+                    }
+                }
+            }
+        }
+    }
+    return result;
+};
