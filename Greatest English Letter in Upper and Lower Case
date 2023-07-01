@@ -1,0 +1,62 @@
+2309. Greatest English Letter in Upper and Lower Case
+Easy
+400
+25
+Companies
+Given a string of English letters s, return the greatest English letter which occurs as both a lowercase and uppercase letter in s. The returned letter should be in uppercase. If no such letter exists, return an empty string.
+
+An English letter b is greater than another letter a if b appears after a in the English alphabet.
+
+ 
+
+Example 1:
+
+Input: s = "lEeTcOdE"
+Output: "E"
+Explanation:
+The letter 'E' is the only letter to appear in both lower and upper case.
+Example 2:
+
+Input: s = "arRAzFif"
+Output: "R"
+Explanation:
+The letter 'R' is the greatest letter to appear in both lower and upper case.
+Note that 'A' and 'F' also appear in both lower and upper case, but 'R' is greater than 'F' or 'A'.
+Example 3:
+
+Input: s = "AbCdEfGhIjK"
+Output: ""
+Explanation:
+There is no letter that appears in both lower and upper case.
+ 
+
+Constraints:
+
+1 <= s.length <= 1000
+s consists of lowercase and uppercase English letters.
+
+# Answer
+
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var greatestLetter = function(s) {
+  let letter = "", alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+    // Loop through string
+    for (let ele of s) {
+    // Test if index value  exist as a uppercase letter and lower case letter
+    if (s.includes(ele.toUpperCase()) && s.includes(ele.toLowerCase())) {
+      // Check to see if the letter is the largest index
+      if (!letter) {
+      letter = ele.toUpperCase();   
+      } else {
+        if (alphabet.indexOf(ele.toLowerCase()) > alphabet.indexOf(letter.toLowerCase())) {
+          console.log(ele);
+          letter = ele.toUpperCase();   
+        }
+      }
+    }
+}
+    return letter;
+};
