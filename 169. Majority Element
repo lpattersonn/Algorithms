@@ -1,0 +1,31 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var majorityElement = function(nums) {
+    let obj = {}, result = [];
+
+    // Find the number of accurances for each number
+    for (let i = 0; i <= nums.length - 1; i++) {
+        if (obj[nums[i]] === undefined) {
+            obj[nums[i]] = 1;
+        } else {
+            obj[nums[i]]++;
+        }
+    }
+
+    // Loop through the object and return the key value pair with the highest number of accurances  
+    for (ele in obj) {
+        if (result[0] === undefined) {
+            result[0] = ele;
+            result[1] = obj[ele];
+        } 
+        if (obj[ele] > result[1]) {
+            result[0] = ele;
+            result[1] = obj[ele];
+        }
+        console.log(result);
+    }
+
+    return result[0];
+};
